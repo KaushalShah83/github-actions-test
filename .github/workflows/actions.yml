@@ -1,9 +1,11 @@
 name: Action Workflow
 
 on: 
-  schedule:
-    - cron: "0/25 * * * *"
-    - cron: "0/27 * * * *"
+  repository_dispatch:
+    types: [build]
+  #schedule:
+   # - cron: "0/25 * * * *"
+  # - cron: "0/27 * * * *"
   pull_request:
     types: [closed, assigned,
       opened, reopened]
